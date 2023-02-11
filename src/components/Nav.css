@@ -1,0 +1,70 @@
+#TopNav {
+  background-color: #020202;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 0 40px;
+  width: 100vw;
+  height: 70px;
+  font-family: var(--main-font-family);
+  position: relative;
+  z-index: 20;
+}
+
+/* #TopNav * {
+  outline: 1px solid red;
+} */
+#TopNav .shoplink {
+  background-color: white;
+  color: black;
+  padding: 5px 30px;
+  border-radius: 0.3rem;
+  user-select: none;
+  font-variant: small-caps;
+  margin-left: auto;
+  transition: all 0.1s ease-in-out;
+}
+
+#TopNav .account {
+  display: flex;
+  gap: 20px;
+}
+
+#TopNav .account .nav-icon {
+  height: 24px;
+  width: 24px;
+  transition: all 0.1s ease-in-out;
+}
+
+#TopNav .account .nav-icon:hover,
+#TopNav .shoplink:hover {
+  transform: scale(1.05);
+}
+
+#TopNav .account .nav-icon:active,
+#TopNav .shoplink:active {
+  transform: scale(0.95);
+}
+
+#TopNav .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  margin-right: 20px;
+}
+
+#TopNav .logo p {
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  font-variant: small-caps;
+  letter-spacing: 5px;
+}
+
+#TopNav .logo .svg {
+  height: 32px;
+  width: 32px;
+}
