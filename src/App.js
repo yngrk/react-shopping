@@ -10,41 +10,68 @@ import { useState } from 'react';
 
 function App() {
   const [wishlist, setWishlist] = useState([]);
+  const [cart, setCart] = useState([]);
 
-  const handleWishlistBtn = (wishlisted, setWishlisted, title) => {
+  const handleWishlistBtn = (wishlisted, setWishlisted, product) => {
     const newList = [...wishlist];
     if (!wishlisted) {
-      newList.push(title);
+      newList.push(product);
     } else {
-      const idx = newList.findIndex((item) => item === title);
+      const idx = newList.findIndex((item) => item.title === product.title);
       newList.splice(idx, 1);
     }
     setWishlist(newList);
     setWishlisted(!wishlisted);
   };
 
+  const handleCartBtn = (addedToCart, setAddedToCart, product) => {
+    const newList = [...cart];
+    if (!addedToCart) {
+      newList.push(product);
+    } else {
+      const idx = newList.findIndex((item) => item.title === product.title);
+      newList.splice(idx, 1);
+    }
+    setCart(newList);
+    setAddedToCart(!addedToCart);
+  };
+
   return (
     <div className="App">
       <BrowserRouter>
-        <TopNav />
+        <TopNav currentCart={cart} currentWishlist={wishlist} />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route
             path="/shop"
             element={
               <Shop
-                onWishlistBtn={(wishlisted, setWishlisted, title) => {
+                handleWishlistBtn={(wishlisted, setWishlisted, title) => {
                   handleWishlistBtn(wishlisted, setWishlisted, title);
                 }}
-                wishlist={wishlist}
+                handleCartBtn={(addedToCart, setAddedToCart, product) => {
+                  handleCartBtn(addedToCart, setAddedToCart, product);
+                }}
+                currentWishlist={wishlist}
+                currentCart={cart}
               />
             }
           />
           <Route
             path="/wishlist"
-            element={<WishList wishlist={wishlist} setWishlist={setWishlist} />}
+            element={
+              <WishList
+                currentWishlist={wishlist}
+                currentCart={cart}
+                setWishlist={setWishlist}
+                setCart={setCart}
+              />
+            }
           />
-          <Route path="/cart" element={<ShoppingCart />} />
+          <Route
+            path="/cart"
+            element={<ShoppingCart setCart={setCart} currentCart={cart} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

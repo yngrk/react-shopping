@@ -30,6 +30,7 @@
 #TopNav .account {
   display: flex;
   gap: 20px;
+  position: relative;
 }
 
 #TopNav .account .nav-icon {
@@ -46,6 +47,34 @@
 #TopNav .account .nav-icon:active,
 #TopNav .shoplink:active {
   transform: scale(0.95);
+}
+
+#TopNav .wish-counter {
+  font-size: 0.7rem;
+  width: 14px;
+  height: 14px;
+  background-color: rgb(212, 48, 48);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
+
+#TopNav .cart-counter {
+  font-size: 0.7rem;
+  width: 14px;
+  height: 14px;
+  background-color: rgb(53, 96, 136);
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  right: -5px;
 }
 
 #TopNav .logo {

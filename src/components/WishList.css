@@ -67,6 +67,14 @@
   gap: 5px;
 }
 
+.wishlist-item .item .controls .in-cart {
+  background-color: black;
+  color: white;
+  border-radius: 0.3rem;
+  padding: 5px;
+  user-select: none;
+}
+
 .wishlist-item .item .controls .to-cart,
 .wishlist-item .item .controls .remove {
   background-color: black;

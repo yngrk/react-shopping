@@ -51,6 +51,10 @@
   margin-top: 1vw;
 }
 
+#Shop .card .info .price {
+  margin-top: auto;
+}
+
 #Shop .card .info .controls {
   box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.185);
   margin-top: auto;
